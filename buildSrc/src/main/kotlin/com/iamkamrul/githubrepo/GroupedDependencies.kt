@@ -7,6 +7,8 @@ internal val androidxCoreDependencies = listOf(
     Dependencies.constraintLayout,
     Dependencies.activityKtx,
     Dependencies.fragmentKtx,
+    Dependencies.recyclerview,
+    Dependencies.cardview
 )
 
 internal val androidxLifeCycleDependencies = listOf(
@@ -37,6 +39,12 @@ internal val hiltDependencies = listOf(
     Dependencies.hiltAndroid
 )
 
+internal val featureModuleHelperDependencies = listOf(
+    Dependencies.viewStateLayout,
+    Dependencies.circleImageview,
+    Dependencies.picasso
+)
+
 internal val helperDependencies = listOf(
     Dependencies.timber,
     Dependencies.gson
@@ -53,6 +61,10 @@ internal val featureModuleDependentDependencies = listOf(
     ModuleDependencies.di,
     ModuleDependencies.domain,
     ModuleDependencies.common
+)
+
+internal val featureModuleDependencies = listOf(
+    ModuleDependencies.repoList
 )
 
 internal val androidTestsDependencies = listOf(

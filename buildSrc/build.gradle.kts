@@ -15,11 +15,14 @@ buildscript {
         mavenLocal()
         mavenCentral()
         google()
+        maven ("https://jitpack.io")
+        maven ("https://oss.jfrog.org/libs-snapshot")
     }
 }
 repositories {
     mavenLocal()
     mavenCentral()
     google()
+    maven ("https://jitpack.io")
     maven ("https://oss.jfrog.org/libs-snapshot")
 }

@@ -7,12 +7,12 @@ apply(from = "$rootDir/android-base-dependencies.gradle")
 
 dependencies {
     addFeatureModuleDependentDependencies()
-
     addAndroidxCoreDependencies()
     addAndroidxLifeCycleDependencies()
     addCoroutinesAndroidDependencies()
     addAndroidxNavigationDependencies()
     addHiltDependencies()
     addHelperDependencies()
+    addFeatureModuleHelperDependencies()
     addAndroidTestsDependencies()
 }

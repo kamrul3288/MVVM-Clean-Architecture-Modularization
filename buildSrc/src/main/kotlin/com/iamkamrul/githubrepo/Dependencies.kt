@@ -7,6 +7,8 @@ internal object Dependencies {
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout_version}"
     const val activityKtx = "androidx.activity:activity-ktx:${Versions.activity_version}"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragment_version}"
+    const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview_version}"
+    const val cardview = "androidx.cardview:cardview:${Versions.card_view_version}"
 
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_version}"
     const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle_version}"
@@ -29,6 +31,9 @@ internal object Dependencies {
     const val okhttp3logging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp3_version}"
 
     const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
+    const val viewStateLayout = "com.github.kamrul3288:ViewStateLayout:${Versions.viewStateLayoutVersion}"
+    const val circleImageview = "de.hdodenhof:circleimageview:${Versions.circleImageViewVersion}"
+    const val picasso = "com.squareup.picasso:picasso:${Versions.picassoVersion}"
 
     const val junit = "junit:junit:${Versions.junit}"
     const val ext_junit = "androidx.test.ext:junit:${Versions.ext_junit}"

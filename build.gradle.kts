@@ -1,7 +1,10 @@
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
         google()
+        maven ("https://jitpack.io")
+        maven ("https://oss.jfrog.org/libs-snapshot")
     }
     dependencies {
         classpath(com.iamkamrul.githubrepo.ProjectConfigs.buildGradle)
@@ -12,8 +15,10 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenLocal()
         mavenCentral()
         google()
-        maven(url = "https://jitpack.io")
+        maven ("https://jitpack.io")
+        maven ("https://oss.jfrog.org/libs-snapshot")
     }
 }

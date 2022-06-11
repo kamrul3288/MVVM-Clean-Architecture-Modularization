@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iamkamrul.library.ViewStateConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/gray_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RepoListFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/repoListRv"
+        tools:listitem="@layout/item_repo_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</com.iamkamrul.library.ViewStateConstraintLayout>

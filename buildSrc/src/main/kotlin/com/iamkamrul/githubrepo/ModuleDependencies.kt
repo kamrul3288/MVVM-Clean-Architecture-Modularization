@@ -7,4 +7,6 @@ object ModuleDependencies {
     const val common = ":common"
     const val api_response = ":model:apiresponse"
     const val entity = ":model:entity"
+
+    const val repoList = ":features:repolist"
 }

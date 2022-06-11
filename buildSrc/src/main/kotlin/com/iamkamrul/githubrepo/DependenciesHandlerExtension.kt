@@ -60,6 +60,18 @@ fun DependencyHandler.addFeatureModuleDependentDependencies(){
     }
 }
 
+fun DependencyHandler.addFeatureModuleDependencies(){
+    featureModuleDependencies.forEach {
+        add("implementation",project(it))
+    }
+}
+
+fun DependencyHandler.addFeatureModuleHelperDependencies(){
+    featureModuleHelperDependencies.forEach {
+        add("implementation",it)
+    }
+}
+
 fun DependencyHandler.addAndroidTestsDependencies() {
     androidTestsDependencies.forEachIndexed { index, dep ->
         when(index){
