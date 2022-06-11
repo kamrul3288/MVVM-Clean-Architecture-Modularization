@@ -10,7 +10,7 @@ class RepositoryListUseCase @Inject constructor(
     private val repository: GithubRepository
 ):ApiUseCase<RepositoryListUseCase.Params,List<RepositoryListItemEntity>>{
     override suspend fun execute(params: Params): Result<List<RepositoryListItemEntity>> {
-        return repository.fetchOwnerRepositoryList(params.userName)
+        return repository.fetchOwnerRepositoryList(params)
     }
     data class Params(val userName:String)
 }

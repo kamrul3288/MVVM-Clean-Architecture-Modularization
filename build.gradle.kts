@@ -10,6 +10,7 @@ buildscript {
         classpath(com.iamkamrul.githubrepo.ProjectConfigs.buildGradle)
         classpath(com.iamkamrul.githubrepo.ProjectConfigs.kotlinGradlePlugin)
         classpath(com.iamkamrul.githubrepo.ProjectConfigs.hiltAndroidGradlePlugin)
+        classpath(com.iamkamrul.githubrepo.ProjectConfigs.navSafeArgs)
     }
 }
 

@@ -66,7 +66,8 @@ internal val featureModuleDependentDependencies = listOf(
 )
 
 internal val featureModuleDependencies = listOf(
-    ModuleDependencies.repoList
+    ModuleDependencies.repoList,
+    ModuleDependencies.profile
 )
 
 internal val androidTestsDependencies = listOf(

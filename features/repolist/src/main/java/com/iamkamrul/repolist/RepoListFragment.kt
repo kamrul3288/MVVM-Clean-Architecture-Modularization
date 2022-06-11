@@ -2,6 +2,7 @@ package com.iamkamrul.repolist
 
 import android.os.Bundle
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.iamkamrul.common.base.BaseFragment
 import com.iamkamrul.common.extension.setUpVerticalRecyclerView
 import com.iamkamrul.repolist.databinding.FragmentRepoListBinding
@@ -13,7 +14,9 @@ class RepoListFragment : BaseFragment<FragmentRepoListBinding>() {
         FragmentRepoListBinding.inflate(layoutInflater)
 
     private val viewModel: RepoListViewModel by viewModels()
-    private val adapter = RepoListAdapter()
+    private val adapter = RepoListAdapter{
+        findNavController().navigate(RepoListFragmentDirections.actionRepoListFragmentToProfileFragment())
+    }
 
 
     override fun initializeView(savedInstanceState: Bundle?) {

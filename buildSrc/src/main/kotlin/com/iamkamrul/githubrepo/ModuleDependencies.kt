@@ -10,4 +10,5 @@ object ModuleDependencies {
     const val entity = ":model:entity"
 
     const val repoList = ":features:repolist"
+    const val profile = ":features:profile"
 }

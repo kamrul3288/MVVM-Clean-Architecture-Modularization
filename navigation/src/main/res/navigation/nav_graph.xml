@@ -7,7 +7,15 @@
     <fragment
         android:id="@+id/repoListFragment"
         android:name="com.iamkamrul.repolist.RepoListFragment"
-        android:label="Your Feed" />
+        android:label="Your Feed" >
+        <action
+            android:id="@+id/action_repoListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.iamkamrul.profile.ProfileFragment"
+        android:label="ProfileFragment" />
 
 
 </navigation>
