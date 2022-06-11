@@ -1,6 +1,6 @@
 package com.iamkamrul.apiresponse
 
-data class OwnerProfileApiResponse(
+data class UserProfileApiResponse(
     val avatar_url: String?,
     val bio: String?,
     val blog: String?,

@@ -2,7 +2,7 @@ package com.iamkamrul.githubrepo
 
 internal object Versions {
     const val buildGradle_version = "7.2.1"
-    const val kotlin_version = "1.7.0"
+    const val kotlin_version = "1.6.21"
 
     const val appcompat_version = "1.4.2"
     const val coreKtx_version = "1.8.0"

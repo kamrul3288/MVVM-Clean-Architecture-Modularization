@@ -23,6 +23,7 @@ internal object Dependencies {
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit_version}"
     const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit_version}"
+    const val gson = "com.google.code.gson:gson:${Versions.retrofit_version}"
 
     const val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.okhttp3_version}"
     const val okhttp3logging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp3_version}"

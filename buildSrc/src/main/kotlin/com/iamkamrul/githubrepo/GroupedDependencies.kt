@@ -38,7 +38,8 @@ internal val hiltDependencies = listOf(
 )
 
 internal val helperDependencies = listOf(
-    Dependencies.timber
+    Dependencies.timber,
+    Dependencies.gson
 )
 
 internal val coreModuleDependencies = listOf(

@@ -1,24 +1,27 @@
 package com.iamkamrul.data.apiservice
 
+import com.iamkamrul.apiresponse.RepositoryItemDetailsApiResponse
+import com.iamkamrul.apiresponse.UserProfileApiResponse
+import com.iamkamrul.apiresponse.RepositoryListItemApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiService {
     @GET("/users/{username}/repos")
-    fun fetchOwnerRepositoryList(
+    suspend fun fetchOwnerRepositoryList(
         @Path("username")username:String
-    ):Response<Nothing>
+    ):Response<List<RepositoryListItemApiResponse>>
 
     @GET("/repos/{ownerName}/{repoName}")
-    fun fetchOwnerRepository(
+    suspend fun fetchOwnerRepository(
         @Path("ownerName")ownerName:String,
         @Path("repoName")repoName:String
-    ):Response<Nothing>
+    ):Response<RepositoryItemDetailsApiResponse>
 
     @GET("/users/{username}")
-    fun fetchUser(
+    suspend fun fetchUser(
         @Path("username")username:String
-    ):Response<Nothing>
+    ):Response<UserProfileApiResponse>
 
 }

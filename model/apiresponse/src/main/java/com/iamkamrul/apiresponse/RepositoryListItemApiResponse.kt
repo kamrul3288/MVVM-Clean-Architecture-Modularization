@@ -1,6 +1,6 @@
 package com.iamkamrul.apiresponse
 
-data class OwnerRepositoryListItemApiResponse(
+data class RepositoryListItemApiResponse(
     val archive_url: String?,
     val archived: Boolean?,
     val assignees_url: String?,
@@ -43,7 +43,7 @@ data class OwnerRepositoryListItemApiResponse(
     val issues_url: String?,
     val keys_url: String?,
     val labels_url: String?,
-    val language: Any?,
+    val language: String?,
     val languages_url: String?,
     val merges_url: String?,
     val milestones_url: String?,
@@ -52,8 +52,8 @@ data class OwnerRepositoryListItemApiResponse(
     val node_id: String?,
     val notifications_url: String?,
     val open_issues_count: Int?,
-    val owner: OwnerRepositoryListOwner?,
-    val permissions: OwnerRepositoryListPermissions?,
+    val owner: RepositoryListItemOwner?,
+    val permissions: RepositoryListItemPermissions?,
     val `private`: Boolean?,
     val pulls_url: String?,
     val pushed_at: String?,
@@ -77,7 +77,7 @@ data class OwnerRepositoryListItemApiResponse(
     val watchers_count: Int?
 )
 
-data class OwnerRepositoryListOwner(
+data class RepositoryListItemOwner(
     val avatar_url: String?,
     val events_url: String?,
     val followers_url: String?,
@@ -98,7 +98,7 @@ data class OwnerRepositoryListOwner(
     val url: String?
 )
 
-data class OwnerRepositoryListPermissions(
+data class RepositoryListItemPermissions(
     val admin: Boolean?,
     val pull: Boolean?,
     val push: Boolean?

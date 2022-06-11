@@ -2,10 +2,10 @@ package com.iamkamrul.githubrepo.application
 
 import android.app.Application
 import com.iamkamrul.githubrepo.BuildConfig
-import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
-@AndroidEntryPoint
+@HiltAndroidApp
 class GithubRepoApplication : Application(){
     override fun onCreate() {
         super.onCreate()

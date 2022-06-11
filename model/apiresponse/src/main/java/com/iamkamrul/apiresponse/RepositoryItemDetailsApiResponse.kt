@@ -1,6 +1,6 @@
 package com.iamkamrul.apiresponse
 
-data class OwnerRepositoryDetailsApiResponse(
+data class RepositoryItemDetailsApiResponse(
     val allow_auto_merge: Boolean?,
     val allow_merge_commit: Boolean?,
     val allow_rebase_merge: Boolean?,
