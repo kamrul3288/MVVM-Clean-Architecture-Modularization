@@ -11,5 +11,6 @@ dependencies {
     addCoroutinesAndroidDependencies()
     addNetworkDependencies()
     addHiltDependencies()
+    addHelperDependencies()
     addAndroidTestsDependencies()
 }

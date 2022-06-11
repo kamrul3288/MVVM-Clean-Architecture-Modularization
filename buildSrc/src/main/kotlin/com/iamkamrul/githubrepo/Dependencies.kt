@@ -27,6 +27,8 @@ internal object Dependencies {
     const val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.okhttp3_version}"
     const val okhttp3logging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp3_version}"
 
+    const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
+
     const val junit = "junit:junit:${Versions.junit}"
     const val ext_junit = "androidx.test.ext:junit:${Versions.ext_junit}"
     const val espresso_core = "androidx.test.espresso:espresso-core:${Versions.espresso}"

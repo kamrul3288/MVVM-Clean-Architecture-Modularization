@@ -11,5 +11,6 @@ dependencies {
     addCoroutinesAndroidDependencies()
     addAndroidxNavigationDependencies()
     addHiltDependencies()
+    addHelperDependencies()
     addAndroidTestsDependencies()
 }

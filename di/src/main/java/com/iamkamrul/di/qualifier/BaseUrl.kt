@@ -1,4 +1,4 @@
-package com.iamkamrul.di
+package com.iamkamrul.di.qualifier
 
 import javax.inject.Qualifier
 

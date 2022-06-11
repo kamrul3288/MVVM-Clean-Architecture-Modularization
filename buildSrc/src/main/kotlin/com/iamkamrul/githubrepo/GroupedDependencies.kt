@@ -37,6 +37,10 @@ internal val hiltDependencies = listOf(
     Dependencies.hiltAndroid
 )
 
+internal val helperDependencies = listOf(
+    Dependencies.timber
+)
+
 
 internal val androidTestsDependencies = listOf(
     Dependencies.junit,

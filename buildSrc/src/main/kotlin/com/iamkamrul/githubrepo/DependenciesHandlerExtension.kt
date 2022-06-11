@@ -41,6 +41,12 @@ fun DependencyHandler.addHiltDependencies() {
     }
 }
 
+fun DependencyHandler.addHelperDependencies(){
+    helperDependencies.forEach {
+        add("implementation",it)
+    }
+}
+
 fun DependencyHandler.addAndroidTestsDependencies() {
     androidTestsDependencies.forEachIndexed { index, dep ->
         when(index){

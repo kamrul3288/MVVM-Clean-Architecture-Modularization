@@ -16,6 +16,7 @@ internal object Versions {
     const val coroutines_version = "1.6.2"
     const val retrofit_version = "2.9.0"
     const val okhttp3_version = "4.9.3"
+    const val timberVersion = "5.0.1"
 
 
     const val junit = "4.13.2"
