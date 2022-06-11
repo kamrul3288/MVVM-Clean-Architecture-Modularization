@@ -5,6 +5,5 @@ pluginManagement {
         mavenCentral()
     }
 }
-
 rootProject.name = "GithubRepo"
 include (":app")

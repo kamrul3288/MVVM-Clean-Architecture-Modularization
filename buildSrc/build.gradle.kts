@@ -1,9 +1,15 @@
-
+import org.gradle.kotlin.dsl.`kotlin-dsl`
 plugins {
     `kotlin-dsl`
 }
 
-
+sourceSets {
+    main {
+        java {
+            setSrcDirs(listOf("src"))
+        }
+    }
+}
 buildscript {
     repositories {
         mavenLocal()
@@ -11,8 +17,6 @@ buildscript {
         google()
     }
 }
-
-
 repositories {
     mavenLocal()
     mavenCentral()
