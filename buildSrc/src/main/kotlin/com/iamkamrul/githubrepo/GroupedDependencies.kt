@@ -55,12 +55,14 @@ internal val coreModuleDependencies = listOf(
    ModuleDependencies.data,
    ModuleDependencies.domain,
    ModuleDependencies.common,
+   ModuleDependencies.navigation,
 )
 
 internal val featureModuleDependentDependencies = listOf(
     ModuleDependencies.di,
     ModuleDependencies.domain,
-    ModuleDependencies.common
+    ModuleDependencies.common,
+    ModuleDependencies.navigation,
 )
 
 internal val featureModuleDependencies = listOf(
