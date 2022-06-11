@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    addCoreModuleDependencies()
+
     addAndroidxCoreDependencies()
     addAndroidxLifeCycleDependencies()
     addAndroidxNavigationDependencies()

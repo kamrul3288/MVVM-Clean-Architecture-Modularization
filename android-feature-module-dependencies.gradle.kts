@@ -6,6 +6,8 @@ apply(plugin = "dagger.hilt.android.plugin")
 apply(from = "$rootDir/android-base-dependencies.gradle")
 
 dependencies {
+    addFeatureModuleDependentDependencies()
+
     addAndroidxCoreDependencies()
     addAndroidxLifeCycleDependencies()
     addCoroutinesAndroidDependencies()

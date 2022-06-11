@@ -1,6 +1,7 @@
 package com.iamkamrul.githubrepo
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.project
 
 fun DependencyHandler.addAndroidxCoreDependencies(){
     androidxCoreDependencies.forEach {
@@ -44,6 +45,18 @@ fun DependencyHandler.addHiltDependencies() {
 fun DependencyHandler.addHelperDependencies(){
     helperDependencies.forEach {
         add("implementation",it)
+    }
+}
+
+fun DependencyHandler.addCoreModuleDependencies(){
+    coreModuleDependencies.forEach {
+        add("implementation",project(it))
+    }
+}
+
+fun DependencyHandler.addFeatureModuleDependentDependencies(){
+    featureModuleDependentDependencies.forEach {
+        add("implementation",project(it))
     }
 }
 

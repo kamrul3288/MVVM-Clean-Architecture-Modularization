@@ -41,6 +41,18 @@ internal val helperDependencies = listOf(
     Dependencies.timber
 )
 
+internal val coreModuleDependencies = listOf(
+   ModuleDependencies.di,
+   ModuleDependencies.data,
+   ModuleDependencies.domain,
+   ModuleDependencies.common,
+)
+
+internal val featureModuleDependentDependencies = listOf(
+    ModuleDependencies.di,
+    ModuleDependencies.domain,
+    ModuleDependencies.common
+)
 
 internal val androidTestsDependencies = listOf(
     Dependencies.junit,
