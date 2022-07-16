@@ -31,13 +31,13 @@ class ProfileViewModel @Inject constructor(
 
     private fun fetchUserProfile(data:UserProfileUiAction.FetchUserProfile){
         execute {
-            _uiState.value = UserProfileUiState.Loading(true)
-            val result = userProfileUseCase.execute(UserProfileUseCase.Params(userName = data.userName))
-            _uiState.value = UserProfileUiState.Loading(false)
-            when(result){
-                is Result.Success-> _uiState.value = UserProfileUiState.Success(result.data)
-                is Result.Error-> _uiState.value = UserProfileUiState.Error(result.message)
-            }
+          userProfileUseCase.execute(UserProfileUseCase.Params(userName = data.userName)).collect{result->
+              when(result){
+                  is Result.Success-> _uiState.value = UserProfileUiState.Success(result.data)
+                  is Result.Error-> _uiState.value = UserProfileUiState.Error(result.message)
+                  is Result.Loading -> _uiState.value = UserProfileUiState.Loading(result.loadingState)
+              }
+          }
         }
     }
 }

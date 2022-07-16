@@ -4,6 +4,8 @@ import com.google.gson.JsonParser
 import com.iamkamrul.domain.base.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import okhttp3.ResponseBody
 import retrofit2.HttpException
@@ -15,19 +17,24 @@ import javax.inject.Inject
 class NetworkBoundResources @Inject constructor(){
     private  val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 
-    suspend fun<ResultType> downloadData(api : suspend () -> Response<ResultType>):Result<ResultType>{
-        return withContext(ioDispatcher){
-            try {
-                val response:Response<ResultType> = api()
-                if (response.isSuccessful){
-                    response.body()?.let {
-                        Result.Success(data = it)
-                    }?: Result.Error(message = "Unknown error occurred", code = 0)
-                }else{
-                    Result.Error(message = parserErrorBody(response.errorBody()), code = response.code())
+    suspend fun<ResultType> downloadData(api : suspend () -> Response<ResultType>):Flow<Result<ResultType>>{
+        return withContext(ioDispatcher) {
+            flow {
+                try {
+                    emit(Result.Loading(true))
+                    val response:Response<ResultType> = api()
+                    emit(Result.Loading(false))
+                    if (response.isSuccessful){
+                        response.body()?.let {
+                            emit(Result.Success(data = it))
+                        }?: emit(Result.Error(message = "Unknown error occurred", code = 0))
+                    }else{
+                        emit(Result.Error(message = parserErrorBody(response.errorBody()), code = response.code()))
+                    }
+                }catch (e:Exception){
+                    emit(Result.Error(message = message(e), code = code(e)))
                 }
-            }catch (e:Exception){
-                Result.Error(message = message(e), code = code(e))
+
             }
         }
     }

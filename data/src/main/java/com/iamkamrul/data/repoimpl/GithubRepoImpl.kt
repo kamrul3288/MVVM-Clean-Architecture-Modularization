@@ -11,6 +11,7 @@ import com.iamkamrul.domain.usecase.RepositoryListUseCase
 import com.iamkamrul.domain.usecase.UserProfileUseCase
 import com.iamkamrul.entity.RepositoryListItemEntity
 import com.iamkamrul.entity.UserProfileEntity
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GithubRepoImpl @Inject constructor(
@@ -20,7 +21,7 @@ class GithubRepoImpl @Inject constructor(
     private val userProfileMapper: UserProfileMapper
 ) : GithubRepository{
 
-    override suspend fun fetchOwnerRepositoryList(params: RepositoryListUseCase.Params): Result<List<RepositoryListItemEntity>> {
+    override suspend fun fetchOwnerRepositoryList(params: RepositoryListUseCase.Params): Flow<Result<List<RepositoryListItemEntity>>> {
         return mapFromApiResponse(
             result = networkBoundResources.downloadData {
                 apiService.fetchOwnerRepositoryList(params.userName)
@@ -28,7 +29,7 @@ class GithubRepoImpl @Inject constructor(
         )
     }
 
-    override suspend fun fetchOwnerProfile(params: UserProfileUseCase.Params): Result<UserProfileEntity> {
+    override suspend fun fetchOwnerProfile(params: UserProfileUseCase.Params): Flow<Result<UserProfileEntity>> {
         return mapFromApiResponse(
             result = networkBoundResources.downloadData {
                 apiService.fetchUser(params.userName)

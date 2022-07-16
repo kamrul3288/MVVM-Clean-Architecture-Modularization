@@ -7,6 +7,7 @@ import com.iamkamrul.entity.RepositoryListItemEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 @HiltViewModel
@@ -30,12 +31,12 @@ class RepoListViewModel  @Inject constructor(
 
     private fun fetchRepoList(data:RepoListUiAction.FetchRepoList){
         execute {
-            _uiState.value = RepoListUiState.Loading(true)
-            val result = repoListUseCase.execute(RepositoryListUseCase.Params(userName = data.userName))
-            _uiState.value = RepoListUiState.Loading(false)
-            when(result){
-                is Result.Success-> _uiState.value = RepoListUiState.Success(result.data)
-                is Result.Error-> _uiState.value = RepoListUiState.Error(result.message)
+            repoListUseCase.execute(RepositoryListUseCase.Params(userName = data.userName)).collect{result->
+                when(result){
+                    is Result.Success-> _uiState.value = RepoListUiState.Success(result.data)
+                    is Result.Error-> _uiState.value = RepoListUiState.Error(result.message)
+                    is Result.Loading -> _uiState.value = RepoListUiState.Loading(result.loadingState)
+                }
             }
         }
     }
