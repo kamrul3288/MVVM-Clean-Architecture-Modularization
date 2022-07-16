@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 abstract class BaseFragment<V : ViewBinding> : Fragment() {
@@ -63,8 +64,10 @@ abstract class BaseFragment<V : ViewBinding> : Fragment() {
     protected inline fun<T> Flow<T>.execute(crossinline action:(T)->Unit){
         with(viewLifecycleOwner){
             lifecycleScope.launch {
-                collect{
-                    action(it)
+                repeatOnLifecycle(Lifecycle.State.STARTED){
+                    collect{
+                        action(it)
+                    }
                 }
             }
         }
