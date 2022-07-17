@@ -1,1 +1,10 @@
-apply(from = "$rootDir/android-common-module-dependencies.gradle.kts")
+import dependencies.*
+
+plugins {
+    plugins.`android-base-library`
+}
+dependencies {
+    addCoroutinesAndroidDependencies()
+    addAndroidxCoreDependencies()
+    addAndroidxLifeCycleDependencies()
+}

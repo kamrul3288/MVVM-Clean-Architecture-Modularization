@@ -1,1 +1,10 @@
-apply(from = "$rootDir/android-core-module-dependencies.gradle.kts")
+import dependencies.*
+
+plugins {
+    plugins.`android-base-library-core`
+}
+
+dependencies {
+    addNetworkDependencies()
+    addTimberDependencies(configurationName = "api")
+}

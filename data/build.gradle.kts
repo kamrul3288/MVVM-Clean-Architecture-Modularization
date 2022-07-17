@@ -1,8 +1,14 @@
-import com.iamkamrul.githubrepo.*
+import dependencies.*
 
-apply(from = "$rootDir/android-core-module-dependencies.gradle.kts")
+plugins {
+    plugins.`android-base-library-core`
+}
+
 dependencies {
-    add("implementation",project(ModuleDependencies.di))
-    add("api",project(ModuleDependencies.api_response))
-    add("implementation",project(ModuleDependencies.domain))
+    addNetworkDependencies(configurationName = "api")
+    addDiModule(configurationName = "api")
+    addApiResponseModule(configurationName = "api")
+    addDomainModule()
+    addCoroutinesAndroidDependencies()
+    addRxjava3Dependencies()
 }

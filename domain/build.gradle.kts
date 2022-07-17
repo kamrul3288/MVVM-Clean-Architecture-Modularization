@@ -1,7 +1,9 @@
-import com.iamkamrul.githubrepo.*
+import dependencies.*
 
-apply(from = "$rootDir/android-core-module-dependencies.gradle.kts")
-
+plugins {
+    plugins.`android-base-library-core`
+}
 dependencies {
-    add("api",project(ModuleDependencies.entity))
+    addCoroutinesAndroidDependencies()
+    addEntityModule(configurationName = "api")
 }

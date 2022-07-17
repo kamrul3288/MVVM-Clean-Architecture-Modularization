@@ -7,10 +7,10 @@ buildscript {
         maven ("https://oss.jfrog.org/libs-snapshot")
     }
     dependencies {
-        classpath(com.iamkamrul.githubrepo.ProjectConfigs.buildGradle)
-        classpath(com.iamkamrul.githubrepo.ProjectConfigs.kotlinGradlePlugin)
-        classpath(com.iamkamrul.githubrepo.ProjectConfigs.hiltAndroidGradlePlugin)
-        classpath(com.iamkamrul.githubrepo.ProjectConfigs.navSafeArgs)
+        classpath(ProjectConfigs.buildGradle)
+        classpath(ProjectConfigs.kotlinGradlePlugin)
+        classpath(ProjectConfigs.hiltAndroidGradlePlugin)
+        classpath(ProjectConfigs.navSafeArgs)
     }
 }
 
